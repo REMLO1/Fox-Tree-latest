@@ -96,7 +96,7 @@ h1 em, h2 em {
 
 .brand-logo {
   width: auto;
-  height: 54px;
+  height: 100px;
   object-fit: contain;
   display: block;
 }
