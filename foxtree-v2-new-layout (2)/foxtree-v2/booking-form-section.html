@@ -1,0 +1,77 @@
+<!-- Drop this section into your existing page where the booking form should appear. -->
+<section id="enquire" class="booking-section section-shell" aria-labelledby="booking-heading">
+  <div class="booking-copy">
+    <h2 id="booking-heading">Enquire about a booking.</h2>
+    <p>Send the event details and Fox Tree can come back with availability and options.</p>
+
+    <div class="tags" aria-label="Fox Tree Coffee details">
+      <span>Ansty</span>
+      <span>West Sussex</span>
+      <span>Mobile coffee trailer</span>
+      <span>Tipsy Fox Bar</span>
+    </div>
+  </div>
+
+  <form
+    name="booking-enquiry"
+    method="POST"
+    action="/thank-you"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="booking-form"
+  >
+    <input type="hidden" name="form-name" value="booking-enquiry" />
+    <input type="hidden" name="subject" value="New Fox Tree booking enquiry from foxtreecoffee.co.uk" />
+
+    <p class="hidden-field" aria-hidden="true">
+      <label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+    </p>
+
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+
+      <div class="form-field">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+      </div>
+
+      <div class="form-field">
+        <label for="event-type">Event type</label>
+        <select id="event-type" name="event_type" required>
+          <option value="Market / community event">Market / community event</option>
+          <option value="Private party">Private party</option>
+          <option value="Wedding">Wedding</option>
+          <option value="Corporate event">Corporate event</option>
+          <option value="Shoot / countryside event">Shoot / countryside event</option>
+          <option value="Race day / outdoor event">Race day / outdoor event</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="event-date">Event date</label>
+        <input id="event-date" name="event_date" type="date" />
+      </div>
+
+      <div class="form-field">
+        <label for="event-location">Event location</label>
+        <input id="event-location" name="event_location" type="text" placeholder="Town / venue" />
+      </div>
+    </div>
+
+    <div class="form-field full-width">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us guest numbers, timings and whether you need coffee, bar, or both." required></textarea>
+    </div>
+
+    <button class="submit-button" type="submit">Send enquiry</button>
+  </form>
+</section>
